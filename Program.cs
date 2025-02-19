@@ -22,22 +22,24 @@ for (int i = 0; i < storyWords.Length; i++)
 {
     if (storyWords[i].Contains("("))
     {
-        string wordType = storyWords[i].Replace("(", "").Replace(")", "").Replace(".", "");
+        string wordType = storyWords[i].Replace("(", "").Replace(")", "").Replace(".", ""); /*removes the parentheses and periods from the output*/
 
         Console.Write($"Please give me an example of a/an {wordType}: ");
         string userWord = Console.ReadLine(); /*this asks the user for the type of word it needs*/
+        
         if(storyWords[i].Contains("."))
         {
-            userWord = userWord + ".";
+            userWord = userWord + "."; /*this adds a period after the user's word if the period was initially there in the original*/
         }
-        newStoryWords[i] = userWord;
+        
+        newStoryWords[i] = userWord; /*copies the users word into the new story*/
     }
     else
     {
-        newStoryWords[i] = storyWords[i];
+        newStoryWords[i] = storyWords[i]; /*copies the word into the new story*/
     }
 }
 
 //Writing the new story
-string newStory = string.Join(" ", newStoryWords);
+string newStory = string.Join(" ", newStoryWords); /*joins the array into one string with spaces in between each word*/
 Console.WriteLine(newStory);
