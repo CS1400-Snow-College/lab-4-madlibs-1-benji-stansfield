@@ -30,3 +30,7 @@ for (int i = 0; i < storyWords.Length; i++)
         newStoryWords[i] = storyWords[i];
     }
 }
+
+//Writing the new story
+string newStory = string.Join(" ", newStoryWords);
+Console.WriteLine(newStory);
