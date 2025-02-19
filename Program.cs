@@ -21,7 +21,8 @@ for (int i = 0; i < storyWords.Length; i++)
 {
     if (storyWords[i].Contains("("))
     {
-        Console.Write($"Please give me an example of a/an {storyWords[i]}: ");
+        string wordType = storyWords[i].Replace("(", "").Replace(")", "").Replace(".", "");
+        Console.Write($"Please give me an example of a/an {wordType}: ");
         string userWord = Console.ReadLine(); /*this asks the user for the type of word it needs*/
         newStoryWords[i] = userWord;
     }
